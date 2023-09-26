@@ -68,7 +68,6 @@ public class CollectorGrouping {
 
         // L'objectif ici est de grouper les personnes à la fois sur le pays et sur le sex
         Map<Pair<String, Person.SEX>, List<Person>> personsByCountryAndSex = null; //TODO
-//        Map<Pair<String, Person.SEX>, List<Person>> personsByCountryAndSex = personStream.collect(Collectors.groupingBy(x -> Pair.of(x.getCountry(), x.getSex())));
 
         Assertions.assertEquals(personsByCountryAndSex.get(Pair.of("FRANCE", Person.SEX.MALE)).size(), 2);
         Assertions.assertEquals(personsByCountryAndSex.get(Pair.of("FRANCE", Person.SEX.FEMALE)).size(), 1);

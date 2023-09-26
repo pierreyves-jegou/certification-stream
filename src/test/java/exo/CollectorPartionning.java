@@ -22,7 +22,6 @@ public class CollectorPartionning {
 
         // L'objectif ici est de distinguer les personnes majeures des personnes mineures
         Map<Boolean, List<Person>> personsByMajority = null; //TODO
-//        Map<Boolean, List<Person>> personsByMajority = personStream.collect(Collectors.partitioningBy(x -> x.getAge() >= 18));
 
         Assertions.assertTrue(personsByMajority.get(Boolean.TRUE).contains(jean));
         Assertions.assertTrue(personsByMajority.get(Boolean.TRUE).contains(bon));

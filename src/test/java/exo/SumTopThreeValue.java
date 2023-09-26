@@ -16,11 +16,6 @@ public class SumTopThreeValue {
         // L'objectif est récupérer (si possible avec un seul enchainement de méthode "stream") les 3 valeurs les plus élevées et d'en faire la somme
 
         Integer sum = 0; // TODO
-
-//        Integer sum = inputStream
-//                .sorted(Comparator.reverseOrder())
-//                        .limit(3)
-//                                .reduce(0 , (x1, x2) -> x1 + x2);
         Assertions.assertEquals(57, sum);
     }
 
