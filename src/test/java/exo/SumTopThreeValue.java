@@ -14,8 +14,8 @@ public class SumTopThreeValue {
         Stream<Integer> inputStream = Stream.of(10, 18, 2, 29, 5, 9);
 
         // L'objectif est récupérer (si possible avec un seul enchainement de méthode "stream") les 3 valeurs les plus élevées et d'en faire la somme
-
         Integer sum = 0; // TODO
+
         Assertions.assertEquals(57, sum);
     }
 

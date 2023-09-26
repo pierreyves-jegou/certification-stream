@@ -12,19 +12,17 @@ public class PrimitiveAverage {
     void averageOnIntegerStream(){
         Stream<Integer> integerStream = Stream.of(10, 20);
 
-
-//        double average = 0d; //TODO
-        double average = integerStream.mapToDouble(x -> x)
-                        .average()
-                                .orElse(0.0);
+        // L'objectif ici est d'effectuer la somme des "Integer". Lorsque pas de valeur on renverra "0.0"
+        double average = 0d; //TODO
         Assertions.assertEquals(15, average);
     }
 
     @Test
     void averageOnIntStream(){
         IntStream intStream = IntStream.of(10, 20);
-        double average = 0d; //TODO
 
+        // L'objectif ici est d'effectuer la somme des "int". Lorsque pas de valeur on renverra "0.0"
+        double average = 0d; //TODO
         Assertions.assertEquals(15, average);
     }
 
