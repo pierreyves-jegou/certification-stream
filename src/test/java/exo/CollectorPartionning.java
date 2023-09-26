@@ -6,6 +6,7 @@ import stream.Person;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class CollectorPartionning {
@@ -21,8 +22,7 @@ public class CollectorPartionning {
         Stream<Person> personStream = Stream.of(jean, bon, steeve, mary);
 
         // L'objectif ici est de distinguer les personnes majeures des personnes mineures
-        Map<Boolean, List<Person>> personsByMajority = null; //TODO
-//        Map<Boolean, List<Person>> personsByMajority = personStream.collect(Collectors.partitioningBy(x -> x.getAge() >= 18));
+        Map<Boolean, List<Person>> personsByMajority = personStream.collect(Collectors.partitioningBy(x -> x.getAge() >= 18));
 
         Assertions.assertTrue(personsByMajority.get(Boolean.TRUE).contains(jean));
         Assertions.assertTrue(personsByMajority.get(Boolean.TRUE).contains(bon));

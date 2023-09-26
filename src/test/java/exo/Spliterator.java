@@ -1,5 +1,6 @@
 package exo;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -22,9 +23,7 @@ public class Spliterator {
         spliterator2.forEachRemaining(i -> intermediateSum.setSum2(intermediateSum.getSum2() + i));
         spliterator1.forEachRemaining(i -> intermediateSum.setSum2(intermediateSum.getSum2() + i));
 
-        System.out.println(intermediateSum);
-
-
+        Assertions.assertEquals(28, intermediateSum.getSum1() + intermediateSum.getSum2());
     }
 
     class IntermediateSum{

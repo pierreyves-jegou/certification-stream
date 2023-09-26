@@ -15,8 +15,8 @@ public class Boxed {
         // Given
         IntStream intStream = IntStream.of(10, 11, 12, 13);
 
-        Stream<Integer> integerStream = null; // TODO
-        
+        Stream<Integer> integerStream = intStream.boxed();
+
         // L'objectif est de récupérer l'ensemble des éléments dans une liste
         Assertions.assertEquals(integerStream.collect(Collectors.toList()).size(), 4);
     }

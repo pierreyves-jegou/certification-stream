@@ -44,8 +44,7 @@ public class CollectorGrouping {
         Stream<Person> personStream = Stream.of(jean, bon, steeve, mary, jane);
 
         // L'objectif ici est de grouper les personnes par pays puis par sex
-        Map<String, Map<Person.SEX, List<Person>>> personsByCountryThenBySex = null; //TODO
-        //Map<String, Map<Person.SEX, List<Person>>> personsByCountryThenBySex = personStream.collect(Collectors.groupingBy(x -> x.getCountry(), Collectors.groupingBy(x -> x.getSex())));
+        Map<String, Map<Person.SEX, List<Person>>> personsByCountryThenBySex = personStream.collect(Collectors.groupingBy(x -> x.getCountry(), Collectors.groupingBy(x -> x.getSex())));
 
         Assertions.assertEquals(personsByCountryThenBySex.get("FRANCE").get(Person.SEX.MALE).size(), 2);
         Assertions.assertEquals(personsByCountryThenBySex.get("FRANCE").get(Person.SEX.FEMALE).size(), 1);
@@ -67,8 +66,7 @@ public class CollectorGrouping {
         Stream<Person> personStream = Stream.of(jean, bon, steeve, mary, jane);
 
         // L'objectif ici est de grouper les personnes à la fois sur le pays et sur le sex
-        Map<Pair<String, Person.SEX>, List<Person>> personsByCountryAndSex = null; //TODO
-//        Map<Pair<String, Person.SEX>, List<Person>> personsByCountryAndSex = personStream.collect(Collectors.groupingBy(x -> Pair.of(x.getCountry(), x.getSex())));
+        Map<Pair<String, Person.SEX>, List<Person>> personsByCountryAndSex = personStream.collect(Collectors.groupingBy(x -> Pair.of(x.getCountry(), x.getSex())));
 
         Assertions.assertEquals(personsByCountryAndSex.get(Pair.of("FRANCE", Person.SEX.MALE)).size(), 2);
         Assertions.assertEquals(personsByCountryAndSex.get(Pair.of("FRANCE", Person.SEX.FEMALE)).size(), 1);

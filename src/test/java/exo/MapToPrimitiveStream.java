@@ -16,7 +16,7 @@ public class MapToPrimitiveStream {
         // Given
         Stream<Integer> integerStream = Stream.of(5, 10, 5 , 10);
 
-        IntStream intStream = null; //TODO
+        IntStream intStream = integerStream.mapToInt(x -> x);
 
         OptionalDouble maybeAverage = intStream.average();
         Assertions.assertEquals(maybeAverage.getAsDouble(), 7.5d);

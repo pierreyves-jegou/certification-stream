@@ -12,8 +12,6 @@ public class PrimitiveAverage {
     void averageOnIntegerStream(){
         Stream<Integer> integerStream = Stream.of(10, 20);
 
-
-//        double average = 0d; //TODO
         double average = integerStream.mapToDouble(x -> x)
                         .average()
                                 .orElse(0.0);
@@ -23,7 +21,8 @@ public class PrimitiveAverage {
     @Test
     void averageOnIntStream(){
         IntStream intStream = IntStream.of(10, 20);
-        double average = 0d; //TODO
+        double average = intStream.average()
+                        .orElse(0.0);
 
         Assertions.assertEquals(15, average);
     }
