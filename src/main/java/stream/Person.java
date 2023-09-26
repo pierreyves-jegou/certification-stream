@@ -1,5 +1,8 @@
 package stream;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Person {
 
     public enum SEX { MALE, FEMALE}
@@ -17,10 +20,20 @@ public class Person {
         this.sex = sex;
     }
 
+    public Person(int age, String name, String country, SEX sex, List<String> emails) {
+        this.age = age;
+        this.name = name;
+        this.country = country;
+        this.sex = sex;
+        this.emails = emails;
+    }
+
     int age;
     String name;
     String country;
     SEX sex;
+
+    List<String> emails = new ArrayList<>();
 
 
 
@@ -54,5 +67,13 @@ public class Person {
 
     public void setSex(SEX sex) {
         this.sex = sex;
+    }
+
+    public List<String> getEmails() {
+        return emails;
+    }
+
+    public void setEmails(List<String> emails) {
+        this.emails = emails;
     }
 }
