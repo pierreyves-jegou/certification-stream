@@ -28,7 +28,8 @@ public class CollectorMapping {
 
         // L'objectif ici est d'utiliser le collector "Collectors.mapping()" qui sera souvent utilisé en "downstream" d'un autre collector.
         // Grouper les personnes par pays puis utiliser le collector  "Collectors.mapping()" pour récupérer le 1ier nom (par tri alphabétique)
-        Map<String, Optional<String>> firstOrderedNameByCountry = personStream.collect(Collectors.groupingBy(x -> x.getCountry(), Collectors.mapping(x -> x.getName(), Collectors.minBy(String::compareTo))));
+        Map<String, Optional<String>> firstOrderedNameByCountry = personStream.collect(
+                Collectors.groupingBy(x -> x.getCountry(), Collectors.mapping(x -> x.getName(), Collectors.minBy(String::compareTo))));
 
         Assertions.assertEquals(firstOrderedNameByCountry.get("FRANCE").get(), "bon");
         Assertions.assertEquals(firstOrderedNameByCountry.get("ENGLAND").get(), "steeve");
