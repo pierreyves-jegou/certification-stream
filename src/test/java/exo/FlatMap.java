@@ -29,10 +29,10 @@ public class FlatMap {
         int sum = 0; // TODO
 
         Assertions.assertEquals(
-                list1.stream().mapToInt(Integer::valueOf).sum() +
+                sum
+                , list1.stream().mapToInt(Integer::valueOf).sum() +
                         list2.stream().mapToInt(Integer::valueOf).sum() +
-                        list3.stream().mapToInt(Integer::valueOf).sum()
-                , sum);
+                        list3.stream().mapToInt(Integer::valueOf).sum());
 
     }
 
@@ -60,7 +60,7 @@ public class FlatMap {
 
     private List<Integer> getRandomNumbers(int numbers) {
         Random random = new Random();
-        return Stream.generate(() -> random.nextInt())
+        return Stream.generate(random::nextInt)
                 .limit(numbers)
                 .collect(Collectors.toList());
     }

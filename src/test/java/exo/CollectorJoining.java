@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 public class CollectorJoining {
 
     @Test
-    void joingThemAll(){
+    void joinThemAll(){
         //Given
         Stream<String> inputStream = Stream.of("jean", "bon", "tony");
 

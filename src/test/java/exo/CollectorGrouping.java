@@ -25,11 +25,11 @@ public class CollectorGrouping {
 
         // L'objectif ici est de grouper les personnes par pays
         //Map<String, List<Person>> personsByCountry = null; //TODO
-        Map<String, List<Person>> personsByCountry = personStream.collect(Collectors.groupingBy(x -> x.getCountry()));
+        Map<String, List<Person>> personsByCountry = personStream.collect(Collectors.groupingBy(Person::getCountry));
 
-        Assertions.assertEquals(personsByCountry.get("FRANCE").size(), 2);
-        Assertions.assertEquals(personsByCountry.get("ENGLAND").size(), 1);
-        Assertions.assertEquals(personsByCountry.get("ITALIA").size(), 1);
+        Assertions.assertEquals(2, personsByCountry.get("FRANCE").size());
+        Assertions.assertEquals(1, personsByCountry.get("ENGLAND").size());
+        Assertions.assertEquals(1, personsByCountry.get("ITALIA").size());
     }
 
     @Test

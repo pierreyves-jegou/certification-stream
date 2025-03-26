@@ -16,7 +16,7 @@ public class Generate {
         Stream<Double> doubleStream = null; // TODO
 
         List<Double> collect = doubleStream.collect(Collectors.toList());
-        Assertions.assertEquals(collect.size(), 100);
+        Assertions.assertEquals(100, collect.size());
 
     }
 

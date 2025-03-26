@@ -19,7 +19,7 @@ public class MapToPrimitiveStream {
         IntStream intStream = null; //TODO
 
         OptionalDouble maybeAverage = intStream.average();
-        Assertions.assertEquals(maybeAverage.getAsDouble(), 7.5d);
+        Assertions.assertEquals(7.5d, maybeAverage.getAsDouble());
 
 
     }
